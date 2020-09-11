@@ -19,7 +19,7 @@ $now = new DateTime();
 $expiredAt = new DateTime($token['expired_at']); // $token['expired_at'] = 2020-09-11 17:49:36
 
 if ($now > $expiredAt) {
-    // @todo: idéalement, on supprime le token de la bdd
+    // @todo: Quand le token est expiré, on supprime le token de la bdd
     http_response_code(404);
     die('404'); // On arrête le script
 }
@@ -29,7 +29,7 @@ if (!empty($_POST)) {
     $password = sanitize($_POST['password']);
     $cfPassword = sanitize($_POST['cfPassword']);
 
-    // @todo: Faire les vérifications
+    // @todo: Faire les vérifications du mdp
 
     $password = password_hash($password, PASSWORD_DEFAULT);
 
