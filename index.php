@@ -20,3 +20,10 @@ On va stocker les tokens de réinitialisation du mot de passe dans une table res
 - user_id
 
 */
+
+require 'config/config.php';
+require 'views/partials/header.php'; 
+
+var_dump($_SESSION);
+
+require 'views/partials/footer.php';
